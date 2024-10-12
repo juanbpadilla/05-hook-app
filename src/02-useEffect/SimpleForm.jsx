@@ -45,19 +45,27 @@ export const SimpleForm = () => {
    * @param {Event} event 
    */
   const onInputChange = ({ target }) => {
-    // console.log(event.target.name);
     const { name, value } = target;
-    // console.log({ name, value });
     setFormState({
       ...formState,
       [ name ]: value
     })
   }
 
-
+  // Se ejecuta una sola vez, cuando el componente es renderizado por primera vez.
   useEffect( () => {
     console.log('useEffect called!');
-  });
+  }, []);
+
+  // Se ejecuta cada vez que el formState cambia.
+  useEffect( () => {
+    console.log('formState changed!');
+  }, [formState]);
+
+  // Se ejecuta cada vez que el email cambia.
+  useEffect( () => {
+    console.log('email changed!');
+  }, [ email ]);
 
 
   return (
