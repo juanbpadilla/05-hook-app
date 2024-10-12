@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Message } from "./Message";
 
 
 export const SimpleForm = () => {
@@ -54,20 +55,28 @@ export const SimpleForm = () => {
 
   // Se ejecuta una sola vez, cuando el componente es renderizado por primera vez.
   useEffect( () => {
-    console.log('useEffect called!');
+    // console.log('useEffect called!');
   }, []);
 
   // Se ejecuta cada vez que el formState cambia.
   useEffect( () => {
-    console.log('formState changed!');
+    // console.log('formState changed!');
   }, [formState]);
 
   // Se ejecuta cada vez que el email cambia.
   useEffect( () => {
-    console.log('email changed!');
+    // console.log('email changed!');
   }, [ email ]);
 
-
+  /**
+   * Una vez que el componente SimpleForm es renderizado, se renderiza el componente Message
+   * si el valor de username es igual a 'strider2'. En este caso, el valor de username es 'strider',
+   * por lo tanto, no se renderiza el componente Message.
+   * 
+   * El componente Message se monta cuando se renderiza por primera vez el componente SimpleForm.
+   * El componente Message se desmonta cuando el usuario no existe, es decir, cuando el valor de
+   * username no es igual a 'strider2'.
+   */
   return (
     <>
       <h1>Formulario Simple</h1>
@@ -90,6 +99,11 @@ export const SimpleForm = () => {
         value={ email }
         onChange={ onInputChange }
       />
+
+      {
+        username === 'strider2' && <Message />
+      }
+
     </>
   )
 }
