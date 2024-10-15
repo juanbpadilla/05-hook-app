@@ -21,6 +21,10 @@ export const useForm = ( initialForm = {} ) => {
     })
   }
   
+  const onResetForm = () => {
+    setFormState( initialForm );
+  };
+
   /**
    * Se devuelve un objeto que contiene el estado del formulario y un manejador de cambios de entrada.
    * 
@@ -31,6 +35,7 @@ export const useForm = ( initialForm = {} ) => {
   return {
     ...formState,
     formState,
-    onInputChange
+    onInputChange,
+    onResetForm
   }
 }

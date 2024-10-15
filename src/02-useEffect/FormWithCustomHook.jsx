@@ -11,7 +11,7 @@ export const FormWithCustomHook = () => {
    * username, email, password: Estas son las propiedades del estado del formulario que se desestructuran del objeto retornado por useForm. Estas variables contienen los valores actuales de los campos del formulario y se inicializan con los valores proporcionados en el objeto pasado a useForm. Por ejemplo, username se inicializa con una cadena vacía ''.
    */
   // eslint-disable-next-line no-unused-vars
-  const { formState, onInputChange, username, email, password } = useForm({
+  const { formState, onInputChange, onResetForm, username, email, password } = useForm({
     username: '',
     email: '',
     password: ''
@@ -53,6 +53,8 @@ export const FormWithCustomHook = () => {
         value={ password }
         onChange={ onInputChange }
       />
+
+      <button onClick={ onResetForm } className="btn btn-primary mt-2">Borrar</button>
 
     </>
   )
