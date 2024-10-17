@@ -3,7 +3,7 @@ import { LoadingMessage } from "./LoadingMessage";
 import { PokemonCard } from "./PokemonCard";
 
 
-export const MiltipleCustomHook = () => {
+export const MultipleCustomHook = () => {
 
   const { counter, decrement, increment } = useCounter(1);
   // eslint-disable-next-line no-unused-vars
