@@ -22,12 +22,18 @@ const vistas = [
   'Tarea Memo'
 ]
 
+const updateLocalStorage = (value) => {
+  window.localStorage.setItem('route', value);
+}
+
 export const HooksApp = () => {
 
-  const [route, setRoute] = useState(0);
+  const initialState = parseInt(window.localStorage.getItem('route')) || 0;
+  const [route, setRoute] = useState(initialState);
 
   const onClickFun = (value) => {
     setRoute(value);
+    updateLocalStorage(value);
   }
 
   const renderComponent = () => {
@@ -80,7 +86,7 @@ export const HooksApp = () => {
           </div>
         </div>
       </nav>
-      
+
       <div className="container">
         { renderComponent() }
       </div>
