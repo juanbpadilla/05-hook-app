@@ -26,12 +26,15 @@ export const CallbackHook = () => {
    * Esta función está memorizada usando `useCallback` para prevenir renderizados innecesarios.
    * Actualiza el estado del contador incrementando su valor actual en 1.
    * 
+   * Actualización:
+   * - Se ha añadido un argumento `value` a la función para incrementar el contador en `value` en lugar de 1.
+   * La función incrementFather acepta un parámetro value, que representa el valor por el cual se incrementará el contador.
+   * 
    * @function
    */
   const incrementFather = useCallback(
-    () => {
-      // console.log('setCounter( counter + 1 );');
-      setCounter( (value) => value + 1 );
+    (value) => {
+      setCounter( (c) => c + value );
     },
     [],
   );
