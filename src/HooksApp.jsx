@@ -7,6 +7,7 @@ import { Layout } from './05-useLayoutEffect/Layout';
 import { Memorize, MemoHook, CallbackHook } from './06-memos';
 import { Padre } from './07-tarea-memo/Padre'
 import { NavButtonItem } from './components/NavButtonItem';
+import { TodoApp } from './08-useReducer/TodoApp';
 
 const vistas = [
   'Counter App',
@@ -19,7 +20,8 @@ const vistas = [
   'Memorize',
   'Memo Hook',
   'Callback Hook',
-  'Tarea Memo'
+  'Tarea Memo',
+  'Todo App',
 ]
 
 const updateLocalStorage = (value) => {
@@ -60,6 +62,8 @@ export const HooksApp = () => {
         return <CallbackHook />;
       case 10:
         return <Padre />;
+      case 11:
+        return <TodoApp />;
       default:
         return <CounterApp />;
     }
