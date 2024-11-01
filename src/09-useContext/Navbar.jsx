@@ -9,7 +9,7 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
 
-            {/* Podemos activar el link manualmente cuando corresponda a la ruta, pero ya no es necesario, ahora react lo hace por nosotros */}
+            {/* Podemos activar el link manualmente, pero ya no es necesario, el componente NavLink tiene por defecto la clase 'active' si la página está activa */}
             <NavLink 
               className={ ({ isActive }) => `nav-link ${ isActive ? 'active' : '' }` }
               to="/">
